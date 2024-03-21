@@ -28,14 +28,24 @@ const addNewGoal = () => {
 
   // ⚠️ Hint 1: Check for duplicates
   // Use 'goalList' to get all existing goals and check if 'goalInput' matches any of them.
-  const existingGoals = goalList.querySelectorAll("li");
-  let isDuplicate = false;
-  for (let i = 0; i < existingGoals.length; i++) {
-    if (existingGoals[i].textContent === goalInput) {
-      isDuplicate = true;
-      break;
-    }
+// Get all the existing goal list items from the unordered list with the ID "#goalList"
+
+
+const existingGoals = goalList.querySelectorAll("li");
+
+// Initialize a flag variable 'isDuplicate' to false
+let isDuplicate = false;
+
+// Loop through each existing goal list item
+for (let i = 0; i < existingGoals.length; i++) {
+  // Check if the text content of the current list item matches the user input 'goalInput'
+  if (existingGoals[i].textContent === goalInput) {
+    // If a match is found, set 'isDuplicate' to true
+    isDuplicate = true;
+    // Break out of the loop since a duplicate is found
+    break;
   }
+}
 
   // ⚠️ Hint 2: Prevent duplicates
   // If a duplicate is found, display an alert to the user and don't add the goal to the list.
